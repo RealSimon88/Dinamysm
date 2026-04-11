@@ -257,3 +257,31 @@ footer{padding:56px 40px 28px;background:#0a0a0f;}
   .modal-body{padding:22px 22px 30px;}
   .modal-body h2{font-size:1.25rem;}
 }
+
+/* COOKIE BANNER */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#ffffff;border-top:1px solid rgba(0,0,0,0.08);box-shadow:0 -4px 30px rgba(0,0,0,0.1);transform:translateY(100%);transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);padding:20px 40px;}
+.cookie-banner.visible{transform:translateY(0);}
+.cookie-banner-inner{max-width:1200px;margin:0 auto;display:flex;gap:32px;align-items:center;flex-wrap:wrap;}
+.cookie-banner-text{flex:1;min-width:280px;}
+.cookie-banner-text strong{font-size:0.95rem;font-weight:700;color:#0a0a0f;display:block;margin-bottom:6px;}
+.cookie-banner-text p{font-size:0.82rem;color:#666666;line-height:1.6;}
+.cookie-banner-text a{color:#c9a020;text-decoration:underline;}
+.cookie-banner-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;}
+.cookie-toggles{display:flex;gap:20px;}
+.cookie-toggle{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:0.78rem;font-weight:600;color:#333;cursor:pointer;}
+.cookie-toggle input{width:36px;height:20px;accent-color:#c9a020;cursor:pointer;}
+.cookie-toggle small{font-size:0.68rem;color:#999;font-weight:400;}
+.cookie-banner-buttons{display:flex;gap:8px;flex-wrap:wrap;}
+.cookie-btn-reject{padding:9px 18px;border:1.5px solid rgba(0,0,0,0.15);background:transparent;color:#555;font-size:0.8rem;font-weight:600;border-radius:6px;cursor:pointer;transition:0.2s;}
+.cookie-btn-reject:hover{border-color:#0a0a0f;color:#0a0a0f;}
+.cookie-btn-custom{padding:9px 18px;border:1.5px solid #c9a020;background:transparent;color:#c9a020;font-size:0.8rem;font-weight:600;border-radius:6px;cursor:pointer;transition:0.2s;}
+.cookie-btn-custom:hover{background:rgba(201,160,32,0.08);}
+.cookie-btn-accept{padding:9px 18px;background:#ffef51;border:none;color:#0a0a0f;font-size:0.8rem;font-weight:700;border-radius:6px;cursor:pointer;transition:0.2s;}
+.cookie-btn-accept:hover{background:#ffe100;box-shadow:0 4px 16px rgba(255,225,0,0.3);}
+@media(max-width:768px){
+  .cookie-banner{padding:16px 20px;}
+  .cookie-banner-inner{gap:16px;}
+  .cookie-banner-actions{width:100%;justify-content:space-between;}
+  .cookie-banner-buttons{width:100%;}
+  .cookie-btn-reject,.cookie-btn-custom,.cookie-btn-accept{flex:1;text-align:center;}
+}

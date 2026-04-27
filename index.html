@@ -14,6 +14,67 @@
 
 <div class="cursor-glow" id="cursorGlow"></div>
 
+<!-- CONTACT FORM MODAL -->
+<div class="contact-overlay" id="contactOverlay" onclick="closeContactModal(event)">
+  <div class="contact-modal">
+    <button class="modal-close" onclick="closeContactModal()">✕</button>
+    <div class="contact-modal-header">
+      <div class="contact-modal-logo"><img src="images/logo-circ.png" alt="Dynamism"></div>
+      <h2>Richiedi una Consulenza</h2>
+      <p>Compila il modulo, ti ricontatteremo in totale riservatezza.</p>
+    </div>
+    <form class="contact-form" id="contactForm" onsubmit="submitContactForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-nome">Nome *</label>
+          <input type="text" id="cf-nome" name="nome" placeholder="Mario" required>
+        </div>
+        <div class="form-group">
+          <label for="cf-cognome">Cognome *</label>
+          <input type="text" id="cf-cognome" name="cognome" placeholder="Rossi" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-email">Email *</label>
+          <input type="email" id="cf-email" name="email" placeholder="mario.rossi@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="cf-telefono">Telefono</label>
+          <input type="tel" id="cf-telefono" name="telefono" placeholder="+39 06 0000000">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cf-servizio">Servizio di interesse</label>
+        <select id="cf-servizio" name="servizio">
+          <option value="">— Seleziona un servizio —</option>
+          <option value="prevenzione">Prevenzione e Difesa</option>
+          <option value="bonifiche">Bonifiche Ambientali</option>
+          <option value="investigazioni">Investigazioni Private</option>
+          <option value="penali">Indagini Penali</option>
+          <option value="portierato">Portierato e Controllo</option>
+          <option value="minori">Controllo Minori</option>
+          <option value="altro">Altro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cf-messaggio">Messaggio</label>
+        <textarea id="cf-messaggio" name="messaggio" rows="4" placeholder="Descriva brevemente la sua esigenza..."></textarea>
+      </div>
+      <div class="form-privacy">
+        <input type="checkbox" id="cf-privacy" name="privacy" required>
+        <label for="cf-privacy">Ho letto e accetto la <a href="privacy-policy.html" target="_blank">Privacy Policy</a>. I dati saranno trattati con la massima riservatezza.</label>
+      </div>
+      <button type="submit" class="form-submit">Invia Richiesta</button>
+    </form>
+    <div class="contact-success" id="contactSuccess">
+      <div class="success-icon">✓</div>
+      <h3>Richiesta inviata!</h3>
+      <p>La contatteremo entro 24 ore in totale riservatezza.</p>
+    </div>
+  </div>
+</div>
+
 <!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
   <div class="modal">
@@ -34,7 +95,7 @@
     <a href="#chi-siamo">Chi Siamo</a>
     <a href="#contatti">Contatti</a>
   </div>
-  <button class="nav-cta desktop-only">Richiedi Consulenza</button>
+  <button class="nav-cta desktop-only" onclick="openContactModal()">Richiedi Consulenza</button>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 
@@ -43,7 +104,7 @@
   <a href="#formazione" onclick="toggleMenu()">Formazione</a>
   <a href="#chi-siamo" onclick="toggleMenu()">Chi Siamo</a>
   <a href="#contatti" onclick="toggleMenu()">Contatti</a>
-  <button class="nav-cta" onclick="toggleMenu()">Richiedi Consulenza</button>
+  <button class="nav-cta" onclick="toggleMenu();openContactModal()">Richiedi Consulenza</button>
 </div>
 
 <section class="hero">
@@ -65,7 +126,7 @@
     </h1>
     <p>Oltre 30 anni di esperienza nella sicurezza aziendale e privata, investigazioni e formazione professionale per forze dell'ordine e aziende.</p>
     <div class="hero-buttons">
-      <button class="btn-primary">Contattaci Ora</button>
+      <button class="btn-primary" onclick="openContactModal()">Contattaci Ora</button>
       <button class="btn-secondary">Scopri i Servizi</button>
     </div>
   </div>
@@ -159,7 +220,7 @@
   <div class="cta-box reveal scale">
     <h2>Hai bisogno di una consulenza?</h2>
     <p>Contattaci per un colloquio riservato e senza impegno. La tua sicurezza è la nostra priorità.</p>
-    <button class="btn-primary">Richiedi un Appuntamento</button>
+    <button class="btn-primary" onclick="openContactModal()">Richiedi un Appuntamento</button>
   </div>
 </section>
 
@@ -167,11 +228,41 @@
   <div class="footer-inner">
     <div class="footer-col"><h4>Dynamism S.r.l.</h4><p>Sede legale: Via Livia Orestilla 12/14 – 00174 Roma</p><p>Sede operativa: Via E. Paternò di Sessa, 40 – 00156 Roma</p></div>
     <div class="footer-col"><h4>Contatti</h4><a href="tel:0641219858">06.4121.9858</a><a href="tel:0641205927">06.4120.5927</a><a href="mailto:info@dynamismsecurity.com">info@dynamismsecurity.com</a></div>
-    <div class="footer-col"><h4>Servizi</h4><a href="#">Prevenzione e Difesa</a><a href="#">Bonifiche Ambientali</a><a href="#">Investigazioni</a><a href="#">Formazione</a></div>
+      <div class="footer-col"><h4>Servizi</h4><a href="#">Prevenzione e Difesa</a><a href="#">Bonifiche Ambientali</a><a href="#">Investigazioni</a><a href="#">Formazione</a></div>
+    <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-policy.html">Cookie Policy</a></div>
   </div>
-  <div class="footer-bottom">© 2026 Dynamism S.r.l. – Tutti i diritti riservati – P.IVA XXXXXXXXXX</div>
+  <div class="footer-bottom">© 2026 Dynamism S.r.l. – Tutti i diritti riservati – P.IVA 14844521006 – C.F. 14844521006</div>
 </footer>
 
 <script src="js/main.js"></script>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-banner-inner">
+    <div class="cookie-banner-text">
+      <strong>🍪 Utilizziamo i cookie</strong>
+      <p>Questo sito utilizza cookie tecnici necessari al funzionamento e, previo consenso, cookie analitici per migliorare l'esperienza. Per maggiori informazioni consulta la <a href="cookie-policy.html">Cookie Policy</a> e la <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    </div>
+    <div class="cookie-banner-actions">
+      <div class="cookie-toggles">
+        <label class="cookie-toggle">
+          <input type="checkbox" checked disabled> <span>Tecnici</span>
+          <small>Sempre attivi</small>
+        </label>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="cookieAnalytics"> <span>Analitici</span>
+          <small>Statistiche di visita</small>
+        </label>
+      </div>
+      <div class="cookie-banner-buttons">
+        <button class="cookie-btn-reject" onclick="cookieRejectAll()">Rifiuta tutti</button>
+        <button class="cookie-btn-custom" onclick="cookieSavePrefs()">Salva preferenze</button>
+        <button class="cookie-btn-accept" onclick="cookieAcceptAll()">Accetta tutti</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/cookies.js"></script>
 </body>
 </html>

@@ -1,3 +1,36 @@
+// CONTACT FORM MODAL
+function openContactModal() {
+  document.getElementById('contactOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeContactModal(e) {
+  if (e && e.target !== document.getElementById('contactOverlay') && !e.target.classList.contains('modal-close')) return;
+  document.getElementById('contactOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function submitContactForm(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('contactSuccess').classList.add('visible');
+  setTimeout(function() {
+    closeContactModal();
+    setTimeout(function() {
+      document.getElementById('contactForm').style.display = '';
+      document.getElementById('contactForm').reset();
+      document.getElementById('contactSuccess').classList.remove('visible');
+    }, 500);
+  }, 3000);
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeContactModal();
+    closeModal();
+  }
+});
+
 // SERVICE DATA
 var services = [
   {
@@ -59,9 +92,6 @@ function closeModal(e) {
   document.body.style.overflow = '';
 }
 
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeModal();
-});
 
 // PRELOADER
 window.addEventListener('load', function() {

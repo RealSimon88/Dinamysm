@@ -213,3 +213,66 @@ footer{padding:60px 40px 30px;border-top:1px solid rgba(255,255,255,0.05);}
   .modal-body{padding:24px 24px 32px;}
   .modal-body h2{font-size:1.3rem;}
 }
+
+/* CONTACT FORM MODAL */
+.contact-overlay{position:fixed;inset:0;background:rgba(0,0,0,0);z-index:1000;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:background 0.4s;padding:20px;}
+.contact-overlay.open{background:rgba(0,0,0,0.75);pointer-events:all;backdrop-filter:blur(8px);}
+.contact-modal{background:#ffffff;border-radius:20px;max-width:620px;width:100%;max-height:92vh;overflow-y:auto;transform:scale(0.92) translateY(24px);opacity:0;transition:all 0.45s cubic-bezier(0.16,1,0.3,1);box-shadow:0 30px 80px rgba(0,0,0,0.5);position:relative;}
+.contact-overlay.open .contact-modal{transform:scale(1) translateY(0);opacity:1;}
+.contact-modal .modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);border:none;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:0.3s;z-index:2;}
+.contact-modal .modal-close:hover{background:#c9a84c;color:#0a0a0f;}
+.contact-modal-header{background:linear-gradient(135deg,#0a0a0f,#1a1a2e);padding:36px 36px 28px;border-radius:20px 20px 0 0;text-align:center;}
+.contact-modal-logo img{width:56px;height:56px;border-radius:50%;margin-bottom:14px;}
+.contact-modal-header h2{font-size:1.5rem;font-weight:800;color:#ffffff;margin-bottom:8px;}
+.contact-modal-header p{font-size:0.88rem;color:rgba(255,255,255,0.5);line-height:1.6;}
+.contact-form{padding:28px 36px 36px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.form-group label{font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#0a0a0f;}
+.form-group input,.form-group select,.form-group textarea{padding:11px 14px;border:1.5px solid rgba(0,0,0,0.1);border-radius:8px;font-size:0.9rem;font-family:'Inter',sans-serif;color:#2e2e2e;background:#f9f9fb;transition:0.3s;outline:none;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#c9a84c;background:#ffffff;box-shadow:0 0 0 3px rgba(201,168,76,0.12);}
+.form-group textarea{resize:vertical;min-height:100px;}
+.form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+.form-privacy{display:flex;align-items:flex-start;gap:10px;margin-bottom:20px;font-size:0.8rem;color:#666;line-height:1.5;}
+.form-privacy input{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:#c9a84c;cursor:pointer;}
+.form-privacy a{color:#c9a84c;text-decoration:underline;}
+.form-submit{width:100%;padding:14px;background:#c9a84c;color:#0a0a0f;font-weight:700;font-size:0.95rem;border:none;border-radius:10px;cursor:pointer;letter-spacing:0.5px;transition:0.3s;text-transform:uppercase;}
+.form-submit:hover{background:#d4b060;box-shadow:0 6px 24px rgba(201,168,76,0.35);transform:translateY(-1px);}
+.contact-success{display:none;padding:60px 36px;text-align:center;}
+.contact-success.visible{display:block;}
+.success-icon{width:64px;height:64px;border-radius:50%;background:#c9a84c;color:#0a0a0f;font-size:1.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.contact-success h3{font-size:1.5rem;font-weight:800;color:#0a0a0f;margin-bottom:10px;}
+.contact-success p{color:#666;font-size:0.95rem;}
+@media(max-width:600px){
+  .form-row{grid-template-columns:1fr;}
+  .contact-form{padding:22px 22px 28px;}
+  .contact-modal-header{padding:28px 22px 22px;}
+}
+
+/* COOKIE BANNER */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#1a1a2e;border-top:1px solid rgba(255,255,255,0.08);box-shadow:0 -4px 30px rgba(0,0,0,0.4);transform:translateY(100%);transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);padding:20px 40px;}
+.cookie-banner.visible{transform:translateY(0);}
+.cookie-banner-inner{max-width:1200px;margin:0 auto;display:flex;gap:32px;align-items:center;flex-wrap:wrap;}
+.cookie-banner-text{flex:1;min-width:280px;}
+.cookie-banner-text strong{font-size:0.95rem;font-weight:700;color:#ffffff;display:block;margin-bottom:6px;}
+.cookie-banner-text p{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.6;}
+.cookie-banner-text a{color:#c9a84c;text-decoration:underline;}
+.cookie-banner-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;}
+.cookie-toggles{display:flex;gap:20px;}
+.cookie-toggle{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.7);cursor:pointer;}
+.cookie-toggle input{width:36px;height:20px;accent-color:#c9a84c;cursor:pointer;}
+.cookie-toggle small{font-size:0.68rem;color:rgba(255,255,255,0.35);font-weight:400;}
+.cookie-banner-buttons{display:flex;gap:8px;flex-wrap:wrap;}
+.cookie-btn-reject{padding:9px 18px;border:1.5px solid rgba(255,255,255,0.2);background:transparent;color:rgba(255,255,255,0.6);font-size:0.8rem;font-weight:600;border-radius:6px;cursor:pointer;transition:0.2s;}
+.cookie-btn-reject:hover{border-color:rgba(255,255,255,0.5);color:#ffffff;}
+.cookie-btn-custom{padding:9px 18px;border:1.5px solid #c9a84c;background:transparent;color:#c9a84c;font-size:0.8rem;font-weight:600;border-radius:6px;cursor:pointer;transition:0.2s;}
+.cookie-btn-custom:hover{background:rgba(201,168,76,0.1);}
+.cookie-btn-accept{padding:9px 18px;background:#c9a84c;border:none;color:#0a0a0f;font-size:0.8rem;font-weight:700;border-radius:6px;cursor:pointer;transition:0.2s;}
+.cookie-btn-accept:hover{background:#d4b060;box-shadow:0 4px 16px rgba(201,168,76,0.3);}
+@media(max-width:768px){
+  .cookie-banner{padding:16px 20px;}
+  .cookie-banner-inner{gap:16px;}
+  .cookie-banner-actions{width:100%;justify-content:space-between;}
+  .cookie-banner-buttons{width:100%;}
+  .cookie-btn-reject,.cookie-btn-custom,.cookie-btn-accept{flex:1;text-align:center;}
+}

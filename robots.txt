@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /prevDynamism.docx
+
+Sitemap: https://dynamismsecurity.com/sitemap.xml

@@ -10,19 +10,63 @@ function closeContactModal(e) {
   document.body.style.overflow = '';
 }
 
+function validateField(field) {
+  var val = field.value.trim();
+  var err = field.parentElement.querySelector('.field-error');
+  var ok = true;
+  if (field.required && !val) {
+    ok = false;
+  } else if (field.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+    ok = false;
+  } else if (field.type === 'tel' && val && !/^[\d\s\+\-\(\)]{6,20}$/.test(val)) {
+    ok = false;
+  }
+  if (!ok) {
+    field.classList.add('field-invalid');
+    if (err) err.style.display = 'block';
+  } else {
+    field.classList.remove('field-invalid');
+    if (err) err.style.display = 'none';
+  }
+  return ok;
+}
+
 function submitContactForm(e) {
   e.preventDefault();
-  document.getElementById('contactForm').style.display = 'none';
+  var form = document.getElementById('contactForm');
+  var fields = form.querySelectorAll('input[required], input[type="email"], input[type="tel"], textarea[required]');
+  var valid = true;
+  fields.forEach(function(f) { if (!validateField(f)) valid = false; });
+  var privacy = document.getElementById('cf-privacy');
+  if (!privacy.checked) {
+    privacy.parentElement.classList.add('privacy-error');
+    valid = false;
+  } else {
+    privacy.parentElement.classList.remove('privacy-error');
+  }
+  if (!valid) return;
+  form.style.display = 'none';
   document.getElementById('contactSuccess').classList.add('visible');
   setTimeout(function() {
     closeContactModal();
     setTimeout(function() {
-      document.getElementById('contactForm').style.display = '';
-      document.getElementById('contactForm').reset();
+      form.style.display = '';
+      form.reset();
+      form.querySelectorAll('.field-invalid').forEach(function(f){ f.classList.remove('field-invalid'); });
       document.getElementById('contactSuccess').classList.remove('visible');
     }, 500);
   }, 3000);
 }
+
+// Validazione live sui campi
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  form.querySelectorAll('input, textarea').forEach(function(f) {
+    f.addEventListener('blur', function() { validateField(f); });
+    f.addEventListener('input', function() { if (f.classList.contains('field-invalid')) validateField(f); });
+  });
+});
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {

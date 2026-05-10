@@ -3,7 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dynamism Security</title>
+
+<!-- SEO PRIMARY -->
+<title>Dynamism S.r.l. | Sicurezza Privata, Investigazioni e Formazione – Roma</title>
+<meta name="description" content="Dynamism S.r.l. offre servizi di sicurezza aziendale e privata, investigazioni, bonifiche ambientali e formazione professionale a Roma. 30+ anni di esperienza, massima riservatezza.">
+<meta name="keywords" content="agenzia investigativa Roma, sicurezza privata Roma, bonifiche ambientali, investigazioni private, security management, Dynamism">
+<meta name="author" content="Dynamism S.r.l.">
+<link rel="canonical" href="https://dynamismsecurity.com/">
+
+<!-- OPEN GRAPH (social sharing) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dynamismsecurity.com/">
+<meta property="og:title" content="Dynamism S.r.l. | Sicurezza Privata e Investigazioni – Roma">
+<meta property="og:description" content="30+ anni di esperienza nella sicurezza aziendale e privata, investigazioni e formazione professionale per forze dell'ordine e aziende.">
+<meta property="og:image" content="https://dynamismsecurity.com/images/logo-circ.png">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Dynamism S.r.l.">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dynamism S.r.l. | Sicurezza Privata e Investigazioni – Roma">
+<meta name="twitter:description" content="30+ anni di esperienza nella sicurezza aziendale e privata, investigazioni e formazione professionale.">
+<meta name="twitter:image" content="https://dynamismsecurity.com/images/logo-circ.png">
+
+<!-- SCHEMA.ORG JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dynamism S.r.l.",
+  "url": "https://dynamismsecurity.com",
+  "logo": "https://dynamismsecurity.com/images/logo-circ.png",
+  "image": "https://dynamismsecurity.com/images/logo-circ.png",
+  "description": "Servizi professionali di sicurezza aziendale e privata, investigazioni, bonifiche ambientali e formazione a Roma.",
+  "vatID": "IT14844521006",
+  "telephone": ["+390641219858", "+390641205927"],
+  "email": "info@dynamismsecurity.com",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Livia Orestilla 12/14",
+      "addressLocality": "Roma",
+      "postalCode": "00174",
+      "addressCountry": "IT",
+      "description": "Sede legale"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Via E. Paternò di Sessa 40",
+      "addressLocality": "Roma",
+      "postalCode": "00156",
+      "addressCountry": "IT",
+      "description": "Sede operativa"
+    }
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Italy"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servizi di Sicurezza",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Prevenzione e Difesa"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bonifiche Ambientali"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Investigazioni Private"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Indagini Penali"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Portierato e Controllo"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Controllo Minori"}}
+    ]
+  },
+  "sameAs": ["https://dynamismsecurity.com"]
+}
+</script>
+
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,20 +101,24 @@
         <div class="form-group">
           <label for="cf-nome">Nome *</label>
           <input type="text" id="cf-nome" name="nome" placeholder="Mario" required>
+          <span class="field-error">Campo obbligatorio</span>
         </div>
         <div class="form-group">
           <label for="cf-cognome">Cognome *</label>
           <input type="text" id="cf-cognome" name="cognome" placeholder="Rossi" required>
+          <span class="field-error">Campo obbligatorio</span>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label for="cf-email">Email *</label>
           <input type="email" id="cf-email" name="email" placeholder="mario.rossi@email.com" required>
+          <span class="field-error">Inserisci un indirizzo email valido</span>
         </div>
         <div class="form-group">
           <label for="cf-telefono">Telefono</label>
           <input type="tel" id="cf-telefono" name="telefono" placeholder="+39 06 0000000">
+          <span class="field-error">Formato non valido</span>
         </div>
       </div>
       <div class="form-group">
@@ -176,32 +253,32 @@
   <div class="services-grid">
 
     <div class="service-card reveal reveal-delay-1" onclick="openModal(0)">
-      <div class="service-card-img"><img src="images/prevenzione-e-difesa.jpg" alt="Prevenzione e Difesa"></div>
+      <div class="service-card-img"><img src="images/prevenzione-e-difesa.jpg" alt="Prevenzione e Difesa" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Prevenzione e Difesa</h3><p>Analisi di vulnerabilità, protocolli di emergenza e innalzamento dei livelli di sicurezza aziendale.</p><div class="arrow">→</div></div>
     </div>
 
     <div class="service-card reveal reveal-delay-2" onclick="openModal(1)">
-      <div class="service-card-img"><img src="images/bonifiche-ambientali.jpg" alt="Bonifiche Ambientali"></div>
+      <div class="service-card-img"><img src="images/bonifiche-ambientali.jpg" alt="Bonifiche Ambientali" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Bonifiche Ambientali</h3><p>Ricerca di microspie, telecamere nascoste e dispositivi di localizzazione.</p><div class="arrow">→</div></div>
     </div>
 
     <div class="service-card reveal reveal-delay-3" onclick="openModal(2)">
-      <div class="service-card-img"><img src="images/investigazioni-private.jpg" alt="Investigazioni Private"></div>
+      <div class="service-card-img"><img src="images/investigazioni-private.jpg" alt="Investigazioni Private" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Investigazioni Private</h3><p>Servizi investigativi privati e aziendali a supporto di studi legali su tutto il territorio.</p><div class="arrow">→</div></div>
     </div>
 
     <div class="service-card reveal reveal-delay-4" onclick="openModal(3)">
-      <div class="service-card-img"><img src="images/indagini-penali.jpg" alt="Indagini Penali"></div>
+      <div class="service-card-img"><img src="images/indagini-penali.jpg" alt="Indagini Penali" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Indagini Penali</h3><p>Investigazioni penali su incarico della Procura o del cliente.</p><div class="arrow">→</div></div>
     </div>
 
     <div class="service-card reveal reveal-delay-5" onclick="openModal(4)">
-      <div class="service-card-img"><img src="images/portierato-e-controllo.jpg" alt="Portierato e Controllo"></div>
+      <div class="service-card-img"><img src="images/portierato-e-controllo.jpg" alt="Portierato e Controllo" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Portierato e Controllo</h3><p>Personale qualificato per controllo accessi, portierato e reception.</p><div class="arrow">→</div></div>
     </div>
 
     <div class="service-card reveal reveal-delay-6" onclick="openModal(5)">
-      <div class="service-card-img"><img src="images/controllo-minori.jpg" alt="Controllo Minori"></div>
+      <div class="service-card-img"><img src="images/controllo-minori.jpg" alt="Controllo Minori" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Controllo Minori</h3><p>Garanzie sulle frequentazioni e abitudini dei propri figli. Massima riservatezza.</p><div class="arrow">→</div></div>
     </div>
 

@@ -306,6 +306,15 @@ footer{padding:56px 40px 28px;background:#0a0a0f;}
 .form-privacy a{color:#c9a020;text-decoration:underline;}
 .form-submit{width:100%;padding:14px;background:#ffef51;color:#0a0a0f;font-weight:700;font-size:0.95rem;border:none;border-radius:10px;cursor:pointer;letter-spacing:0.5px;transition:0.3s;text-transform:uppercase;}
 .form-submit:hover{background:#ffe100;box-shadow:0 6px 24px rgba(255,225,0,0.35);transform:translateY(-1px);}
+
+/* VALIDAZIONE FORM */
+.form-group input.field-invalid,
+.form-group select.field-invalid,
+.form-group textarea.field-invalid{border-color:#e53e3e;background:#fff8f8;}
+.field-error{display:none;font-size:0.72rem;color:#e53e3e;margin-top:4px;font-weight:500;}
+.form-privacy.privacy-error label{color:#e53e3e;}
+.form-privacy.privacy-error a{color:#e53e3e;}
+
 .contact-success{display:none;padding:60px 36px;text-align:center;}
 .contact-success.visible{display:block;}
 .success-icon{width:64px;height:64px;border-radius:50%;background:#ffef51;color:#0a0a0f;font-size:1.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}

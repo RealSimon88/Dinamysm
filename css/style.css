@@ -253,10 +253,10 @@ nav.scrolled{background:rgba(255,255,255,0.97);box-shadow:0 2px 20px rgba(0,0,0,
 .about{padding:100px 40px;background:#f4f5f9;}
 .about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .about-visual{position:relative;}
-.about-box{width:100%;aspect-ratio:1;border-radius:20px;background:linear-gradient(135deg,#0a0a0f,#0a0a0f);border:1px solid rgba(201,160,32,0.2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.about-box::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(255,239,81,0.07),transparent 70%);animation:float 10s ease-in-out infinite;}
-.about-logo{width:55%;height:auto;opacity:0.28;animation:float 6s ease-in-out infinite;}
-.about-box::after{content:'';position:absolute;inset:-2px;border-radius:22px;background:conic-gradient(from 0deg,transparent,#c9a020,transparent,transparent);animation:borderSpin 8s linear infinite;opacity:0.2;}
+.about-box{width:100%;aspect-ratio:1;border-radius:20px;background:linear-gradient(135deg,#ffffff 0%,#f4f5f9 100%);border:2px solid rgba(201,160,32,0.3);box-shadow:0 8px 40px rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.about-box::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(201,160,32,0.1),transparent 65%);animation:float 10s ease-in-out infinite;}
+.about-logo{width:55%;height:auto;opacity:1;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.08));animation:float 6s ease-in-out infinite;}
+.about-box::after{content:'';position:absolute;inset:-2px;border-radius:22px;background:conic-gradient(from 0deg,transparent,#c9a020,transparent,transparent);animation:borderSpin 8s linear infinite;opacity:0.55;}
 @keyframes borderSpin{to{transform:rotate(360deg);}}
 .about-text h2{font-size:2.1rem;font-weight:800;margin-bottom:22px;line-height:1.3;color:#0a0a0f;}
 .about-text h2 em{font-style:normal;color:#c9a020;}

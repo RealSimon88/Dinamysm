@@ -110,26 +110,50 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="particle" style="left:10%;bottom:0;animation-delay:0s;animation-duration:7s;"></div>
-  <div class="particle" style="left:25%;bottom:0;animation-delay:1.5s;animation-duration:5s;"></div>
-  <div class="particle" style="left:50%;bottom:0;animation-delay:0.8s;animation-duration:8s;"></div>
-  <div class="particle" style="left:70%;bottom:0;animation-delay:2.2s;animation-duration:6s;"></div>
-  <div class="particle" style="left:85%;bottom:0;animation-delay:3s;animation-duration:7.5s;"></div>
-  <div class="particle" style="left:40%;bottom:0;animation-delay:4s;animation-duration:5.5s;"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Security &bull; Investigations &bull; Training</div>
-    <h1>
-      <span class="line"><span class="line-inner white">Sicurezza.</span></span>
-      <span class="line"><span class="line-inner gold">Riservatezza.</span></span>
-      <span class="line"><span class="line-inner white">Risultati.</span></span>
-    </h1>
-    <p>Oltre 30 anni di esperienza nella sicurezza aziendale e privata, investigazioni e formazione professionale per forze dell'ordine e aziende.</p>
-    <div class="hero-buttons">
-      <button class="btn-primary" onclick="openContactModal()">Contattaci Ora</button>
-      <button class="btn-secondary">Scopri i Servizi</button>
+
+  <div class="hero-split">
+
+    <!-- SINISTRA: logo con radar -->
+    <div class="hero-logo-side">
+      <div class="hero-radar">
+        <div class="radar-ring radar-ring-1"></div>
+        <div class="radar-ring radar-ring-2"></div>
+        <div class="radar-ring radar-ring-3"></div>
+        <div class="radar-sweep"></div>
+        <div class="radar-dot radar-dot-1"></div>
+        <div class="radar-dot radar-dot-2"></div>
+        <div class="radar-dot radar-dot-3"></div>
+        <div class="hero-logo-wrap">
+          <img src="images/logo-circ.png" alt="Dynamism Security" class="hero-logo-img">
+        </div>
+      </div>
+      <div class="hero-brand-name">DYNAMISM<span>.</span></div>
+      <div class="hero-brand-sub">Security &amp; Investigations</div>
     </div>
+
+    <!-- DESTRA: testo -->
+    <div class="hero-text-side">
+      <div class="hero-badge">30+ anni di esperienza &bull; Roma</div>
+      <h1>
+        <span class="line"><span class="line-inner white">Sicurezza.</span></span>
+        <span class="line"><span class="line-inner gold">Riservatezza.</span></span>
+        <span class="line"><span class="line-inner white">Risultati.</span></span>
+      </h1>
+      <p>Soluzioni professionali di sicurezza aziendale e privata, investigazioni e formazione per forze dell'ordine e imprese.</p>
+      <div class="hero-divider-line"></div>
+      <div class="hero-stats-mini">
+        <div class="hero-stat-mini"><strong>500+</strong><span>Clienti</span></div>
+        <div class="hero-stat-mini"><strong>6</strong><span>Divisioni</span></div>
+        <div class="hero-stat-mini"><strong>100%</strong><span>Riservatezza</span></div>
+      </div>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="openContactModal()">Richiedi Consulenza</button>
+        <button class="btn-secondary" onclick="document.getElementById('servizi').scrollIntoView({behavior:'smooth'})">Scopri i Servizi</button>
+      </div>
+    </div>
+
   </div>
+
   <div class="scroll-indicator"><div class="scroll-line"></div><div class="scroll-text">Scorri</div></div>
 </section>
 

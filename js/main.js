@@ -34,6 +34,8 @@ function validateField(field) {
 function submitContactForm(e) {
   e.preventDefault();
   var form = document.getElementById('contactForm');
+  // Honeypot check: se il campo nascosto è compilato è un bot
+  if (form.querySelector('input[name="_honey"]').value) return;
   var fields = form.querySelectorAll('input[required], input[type="email"], input[type="tel"], textarea[required]');
   var valid = true;
   fields.forEach(function(f) { if (!validateField(f)) valid = false; });

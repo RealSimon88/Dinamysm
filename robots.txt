@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /prevDynamism.docx
+Disallow: /*.docx$
+Disallow: /*.pdf$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
 
 Sitemap: https://dynamismsecurity.com/sitemap.xml

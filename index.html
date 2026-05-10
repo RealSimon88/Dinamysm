@@ -11,6 +11,11 @@
 <meta name="author" content="Dynamism S.r.l.">
 <link rel="canonical" href="https://dynamismsecurity.com/">
 
+<!-- SECURITY -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
 <!-- OPEN GRAPH (social sharing) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dynamismsecurity.com/">
@@ -140,8 +145,10 @@
       </div>
       <div class="form-privacy">
         <input type="checkbox" id="cf-privacy" name="privacy" required>
-        <label for="cf-privacy">Ho letto e accetto la <a href="privacy-policy.html" target="_blank">Privacy Policy</a>. I dati saranno trattati con la massima riservatezza.</label>
+        <label for="cf-privacy">Ho letto e accetto la <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>. I dati saranno trattati con la massima riservatezza.</label>
       </div>
+      <!-- Honeypot anti-spam: nascosto agli utenti, visibile ai bot -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <button type="submit" class="form-submit">Invia Richiesta</button>
     </form>
     <div class="contact-success" id="contactSuccess">

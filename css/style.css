@@ -28,6 +28,8 @@ nav.scrolled{background:rgba(255,255,255,0.97);box-shadow:0 2px 20px rgba(0,0,0,
 .logo{display:flex;align-items:center;gap:12px;font-family:'Orbitron',sans-serif;font-weight:900;font-size:1rem;letter-spacing:3px;color:#0a0a0f;opacity:0;animation:fadeInDown 0.8s 1.2s forwards;}
 .logo img{width:44px;height:44px;border-radius:50%;}
 .logo span{color:#c9a020;}
+.logo-text-block{display:flex;flex-direction:column;gap:3px;line-height:1;}
+.brand-tagline{font-family:'Orbitron',sans-serif;font-weight:700;font-size:0.5rem;letter-spacing:0.22em;text-transform:uppercase;color:#E06321;}
 .nav-links{display:flex;gap:32px;font-size:0.85rem;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;}
 .nav-links a{color:#0a0a0f;opacity:0;transition:0.3s;transform:translateY(-10px);}
 .nav-links a.visible{opacity:0.7;transform:translateY(0);}
@@ -119,7 +121,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);box-shadow:0 2px 20px rgba(0,0,0,
 /* Nome brand sotto il radar */
 .hero-brand-name{font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.3rem;letter-spacing:6px;color:#0a0a0f;text-align:center;opacity:0;animation:fadeInUp 0.8s 1.6s forwards;margin-top:4px;}
 .hero-brand-name span{color:#c9a020;}
-.hero-brand-sub{font-size:0.68rem;text-transform:uppercase;letter-spacing:5px;color:#aaa;text-align:center;opacity:0;animation:fadeInUp 0.8s 1.9s forwards;}
+.hero-brand-sub{font-family:'Orbitron',sans-serif;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.22em;color:#E06321;font-weight:700;text-align:center;opacity:0;animation:fadeInUp 0.8s 1.9s forwards;}
 
 /* Linea verticale separatrice */
 .hero-split::after{content:'';position:absolute;left:50%;top:20%;height:60%;width:1px;background:linear-gradient(to bottom,transparent,rgba(201,160,32,0.2) 30%,rgba(201,160,32,0.2) 70%,transparent);transform:translateX(-50%);}
@@ -253,7 +255,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);box-shadow:0 2px 20px rgba(0,0,0,
 .about{padding:100px 40px;background:#f4f5f9;}
 .about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .about-visual{position:relative;}
-.about-box{width:100%;aspect-ratio:1;border-radius:20px;background:linear-gradient(135deg,#ffffff 0%,#f4f5f9 100%);border:2px solid rgba(201,160,32,0.3);box-shadow:0 8px 40px rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.about-box{width:100%;aspect-ratio:1;border-radius:20px;background:linear-gradient(135deg,#ffffff 0%,#f4f5f9 100%);border:2px solid rgba(201,160,32,0.3);box-shadow:0 8px 40px rgba(0,0,0,0.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;overflow:hidden;}
 .about-box::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(201,160,32,0.1),transparent 65%);animation:float 10s ease-in-out infinite;}
 .about-logo{width:55%;height:auto;opacity:1;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.08));animation:float 6s ease-in-out infinite;}
 .about-box::after{content:'';position:absolute;inset:-2px;border-radius:22px;background:conic-gradient(from 0deg,transparent,#c9a020,transparent,transparent);animation:borderSpin 8s linear infinite;opacity:0.55;}
@@ -290,7 +292,8 @@ footer{padding:56px 40px 28px;background:#0a0a0f;}
 .contact-modal .modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.06);border:none;color:#555;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:0.3s;z-index:2;}
 .contact-modal .modal-close:hover{background:#ffef51;color:#0a0a0f;}
 .contact-modal-header{background:linear-gradient(135deg,#0a0a0f,#1a1a2e);padding:36px 36px 28px;border-radius:20px 20px 0 0;text-align:center;}
-.contact-modal-logo img{width:56px;height:56px;border-radius:50%;margin-bottom:14px;}
+.contact-modal-logo{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:14px;}
+.contact-modal-logo img{width:56px;height:56px;border-radius:50%;}
 .contact-modal-header h2{font-size:1.5rem;font-weight:800;color:#ffffff;margin-bottom:8px;}
 .contact-modal-header p{font-size:0.88rem;color:rgba(255,255,255,0.5);line-height:1.6;}
 .contact-form{padding:28px 36px 36px;}

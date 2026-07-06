@@ -350,6 +350,28 @@ footer{padding:56px 40px 28px;background:#0a0a0f;}
   .modal-body h2{font-size:1.25rem;}
 }
 
+/* SERVICE CARD PLACEHOLDER (immagini non ancora disponibili) */
+.service-img-placeholder{background:linear-gradient(135deg,#eceef4 0%,#dde0eb 100%);}
+.service-img-placeholder::after{content:'Immagine in arrivo';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:0.72rem;color:#aaaaaa;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;}
+
+/* SEZIONE FORMAZIONE */
+.formazione-section{padding:100px 60px;max-width:1200px;margin:0 auto;}
+.formazione-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:60px;}
+.formazione-card{background:#ffffff;border:1px solid rgba(0,0,0,0.07);border-radius:14px;padding:32px 28px;position:relative;transition:0.4s cubic-bezier(0.16,1,0.3,1);}
+.formazione-card:hover{border-color:rgba(201,160,32,0.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.07);}
+.formazione-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#c9a020;border-radius:14px 14px 0 0;transform:scaleX(0);transform-origin:left;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);}
+.formazione-card:hover::before{transform:scaleX(1);}
+.formazione-card-icon{font-size:2rem;font-weight:900;color:rgba(201,160,32,0.18);font-family:'Orbitron',sans-serif;line-height:1;margin-bottom:16px;}
+.formazione-card h3{font-size:1rem;font-weight:700;color:#0a0a0f;margin-bottom:10px;line-height:1.4;}
+.formazione-card p{font-size:0.85rem;color:#777777;line-height:1.7;margin-bottom:16px;}
+.formazione-tag{display:inline-block;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#c9a020;background:rgba(201,160,32,0.1);padding:4px 10px;border-radius:20px;}
+.formazione-cta{text-align:center;padding:40px;background:#f4f5f9;border-radius:16px;}
+.formazione-cta p{font-size:0.95rem;color:#666666;margin-bottom:24px;line-height:1.7;}
+@media(max-width:768px){
+  .formazione-section{padding:60px 20px;}
+  .formazione-grid{grid-template-columns:1fr;}
+}
+
 /* COOKIE BANNER */
 .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#ffffff;border-top:1px solid rgba(0,0,0,0.08);box-shadow:0 -4px 30px rgba(0,0,0,0.1);transform:translateY(100%);transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);padding:20px 40px;}
 .cookie-banner.visible{transform:translateY(0);}

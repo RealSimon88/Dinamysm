@@ -114,6 +114,24 @@ var services = [
     subtitle: "Servizio Dedicato alle Famiglie",
     img: "images/controllo-minori.jpg",
     html: '<p>Il Controllo Minori è un servizio rivolto alle famiglie che vogliono avere maggiori garanzie sulle frequentazioni e abitudini dei propri figli. In un\'epoca in cui i pericoli possono essere ovunque, offriamo un supporto discreto e professionale.</p><p>Il servizio può avvalersi anche di strumentazioni elettroniche personalizzate alle finalità specifiche. La riservatezza è elemento fondamentale per lo svolgimento di tali servizi e valore aggiunto per la salvaguardia della famiglia.</p><div class="modal-divider"></div><ul><li>Monitoraggio discreto delle frequentazioni</li><li>Verifica delle abitudini e degli spostamenti</li><li>Strumentazioni elettroniche personalizzate</li><li>Riservatezza assoluta a tutela della famiglia</li><li>Report dettagliati e documentati</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
+  },
+  {
+    title: "Vigilanza Non Armata",
+    subtitle: "Sorveglianza Professionale e Controllo del Territorio",
+    img: "images/vigilanza-non-armata.jpg",
+    html: '<p>La Dynamism S.r.l. fornisce servizi di vigilanza non armata con personale qualificato e certificato secondo la normativa vigente. Il servizio garantisce una presenza professionale e deterrente presso qualsiasi tipologia di struttura.</p><p>Ogni operatore è formato per gestire situazioni di criticità con equilibrio, competenza e nel pieno rispetto delle procedure operative.</p><div class="modal-divider"></div><ul><li>Presidio e sorveglianza di uffici, strutture commerciali e cantieri</li><li>Controllo degli accessi e identificazione dei visitatori</li><li>Ronde interne ed esterne programmate</li><li>Gestione delle situazioni di criticità e allerta</li><li>Personale abilitato Primo Soccorso e Antincendio</li><li>Copertura diurna, notturna e festiva</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
+  },
+  {
+    title: "Compliance ISO27001 / NIS2",
+    subtitle: "Test di Vulnerabilità e Conformità Normativa",
+    img: "images/compliance-iso27001.jpg",
+    html: '<p>La Dynamism S.r.l. supporta organizzazioni, strutture sanitarie e infrastrutture critiche nella valutazione della propria postura di sicurezza rispetto ai requisiti della norma ISO/IEC 27001 e della Direttiva NIS2, recepita in Italia con D.Lgs. 138/2024.</p><p>Il servizio comprende un\'analisi tecnica approfondita finalizzata all\'identificazione dei gap normativi e alla definizione di un piano di remediation prioritizzato e misurabile.</p><div class="modal-divider"></div><ul><li>Gap analysis rispetto ai controlli ISO/IEC 27001:2022</li><li>Valutazione di conformità alla Direttiva NIS2</li><li>Test di vulnerabilità su infrastrutture IT e OT</li><li>Specifico per strutture sanitarie e PA</li><li>Report tecnico e manageriale con piano di remediation</li><li>Supporto all\'implementazione dei controlli richiesti</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
+  },
+  {
+    title: "Due Diligence Aziendale",
+    subtitle: "Analisi e Verifica Preventiva — Nome da Definire",
+    img: "images/due-diligence.jpg",
+    html: '<p>Il servizio di Due Diligence Aziendale della Dynamism S.r.l. consente di raccogliere e verificare in modo approfondito informazioni su soggetti fisici o giuridici prima di operazioni societarie, acquisizioni, partnership o assunzioni in posizioni di responsabilità.</p><p>L\'attività si avvale di fonti aperte certificate, registri ufficiali nazionali e internazionali e, ove necessario, di attività investigativa sul campo, garantendo un quadro informativo completo e verificato.</p><div class="modal-divider"></div><ul><li>Verifica dell\'affidabilità di partner e fornitori</li><li>Analisi reputazionale di persone fisiche e giuridiche</li><li>Controllo su registri camerali, ipotecari e giudiziari</li><li>Supporto pre-M&A, joint venture e operazioni di investimento</li><li>Screening di candidati per ruoli di alta responsabilità</li><li>Report strutturato con profilo di rischio e raccomandazioni</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   }
 ];
 

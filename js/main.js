@@ -124,13 +124,13 @@ var services = [
   {
     title: "Compliance ISO27001 / NIS2",
     subtitle: "Test di Vulnerabilità e Conformità Normativa",
-    img: "images/compliance-iso27001.jpg",
+    img: "images/NIS2.png",
     html: '<p>La Dynamism S.r.l. supporta organizzazioni, strutture sanitarie e infrastrutture critiche nella valutazione della propria postura di sicurezza rispetto ai requisiti della norma ISO/IEC 27001 e della Direttiva NIS2, recepita in Italia con D.Lgs. 138/2024.</p><p>Il servizio comprende un\'analisi tecnica approfondita finalizzata all\'identificazione dei gap normativi e alla definizione di un piano di remediation prioritizzato e misurabile.</p><div class="modal-divider"></div><ul><li>Gap analysis rispetto ai controlli ISO/IEC 27001:2022</li><li>Valutazione di conformità alla Direttiva NIS2</li><li>Test di vulnerabilità su infrastrutture IT e OT</li><li>Specifico per strutture sanitarie e PA</li><li>Report tecnico e manageriale con piano di remediation</li><li>Supporto all\'implementazione dei controlli richiesti</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   },
   {
     title: "Due Diligence Aziendale",
     subtitle: "Analisi e Verifica Preventiva — Nome da Definire",
-    img: "images/due-diligence.jpg",
+    img: "images/DueDiligence.png",
     html: '<p>Il servizio di Due Diligence Aziendale della Dynamism S.r.l. consente di raccogliere e verificare in modo approfondito informazioni su soggetti fisici o giuridici prima di operazioni societarie, acquisizioni, partnership o assunzioni in posizioni di responsabilità.</p><p>L\'attività si avvale di fonti aperte certificate, registri ufficiali nazionali e internazionali e, ove necessario, di attività investigativa sul campo, garantendo un quadro informativo completo e verificato.</p><div class="modal-divider"></div><ul><li>Verifica dell\'affidabilità di partner e fornitori</li><li>Analisi reputazionale di persone fisiche e giuridiche</li><li>Controllo su registri camerali, ipotecari e giudiziari</li><li>Supporto pre-M&A, joint venture e operazioni di investimento</li><li>Screening di candidati per ruoli di alta responsabilità</li><li>Report strutturato con profilo di rischio e raccomandazioni</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   }
 ];

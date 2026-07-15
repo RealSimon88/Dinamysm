@@ -118,7 +118,7 @@ var services = [
   {
     title: "Vigilanza Non Armata",
     subtitle: "Sorveglianza Professionale e Controllo del Territorio",
-    img: "images/vigilanza-non-armata.jpg",
+    img: "images/VigilanzaNonArmata.png",
     html: '<p>La Dynamism S.r.l. fornisce servizi di vigilanza non armata con personale qualificato e certificato secondo la normativa vigente. Il servizio garantisce una presenza professionale e deterrente presso qualsiasi tipologia di struttura.</p><p>Ogni operatore è formato per gestire situazioni di criticità con equilibrio, competenza e nel pieno rispetto delle procedure operative.</p><div class="modal-divider"></div><ul><li>Presidio e sorveglianza di uffici, strutture commerciali e cantieri</li><li>Controllo degli accessi e identificazione dei visitatori</li><li>Ronde interne ed esterne programmate</li><li>Gestione delle situazioni di criticità e allerta</li><li>Personale abilitato Primo Soccorso e Antincendio</li><li>Copertura diurna, notturna e festiva</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   },
   {

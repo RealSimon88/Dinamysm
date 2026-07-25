@@ -384,10 +384,10 @@ footer{padding:56px 40px 28px;background:#0a0a0f;}
 .partner-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#c9a020;transform:scaleX(0);transform-origin:left;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);}
 .partner-card:hover{border-color:rgba(201,160,32,0.3);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,0.08);}
 .partner-card:hover::before{transform:scaleX(1);}
-.partner-logo-wrap{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#f4f5f9,#eceef4);border:2px solid rgba(201,160,32,0.18);display:flex;align-items:center;justify-content:center;transition:0.4s;}
+.partner-logo-wrap{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#f4f5f9,#eceef4);border:2px solid rgba(201,160,32,0.18);display:flex;align-items:center;justify-content:center;transition:0.4s;overflow:hidden;}
 .partner-card:hover .partner-logo-wrap{border-color:rgba(201,160,32,0.5);box-shadow:0 0 0 6px rgba(201,160,32,0.07);}
 .partner-initials{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;color:#c9a020;letter-spacing:0.08em;}
-.partner-logo-img{width:80px;height:80px;object-fit:contain;filter:grayscale(20%);transition:filter 0.3s;}
+.partner-logo-img{width:65%;height:65%;object-fit:contain;filter:grayscale(20%);transition:filter 0.3s;}
 .partner-card:hover .partner-logo-img{filter:grayscale(0);}
 .partner-info{text-align:center;}
 .partner-name{font-size:1rem;font-weight:700;color:#0a0a0f;margin-bottom:6px;line-height:1.3;}

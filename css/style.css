@@ -392,6 +392,8 @@ footer{padding:56px 40px 28px;background:#0a0a0f;}
 .partner-info{text-align:center;}
 .partner-name{font-size:1rem;font-weight:700;color:#0a0a0f;margin-bottom:6px;line-height:1.3;}
 .partner-link{font-size:0.78rem;color:#c9a020;font-weight:600;letter-spacing:0.03em;}
+.partner-tel{display:block;font-size:0.78rem;color:#c9a020;font-weight:600;letter-spacing:0.03em;text-decoration:none;line-height:1.8;}
+.partner-tel:hover{color:#E06321;}
 @media(max-width:768px){
   .partners-section{padding:60px 20px;}
   .partners-grid{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto;}

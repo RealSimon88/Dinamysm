@@ -124,7 +124,7 @@ var services = [
   {
     title: "Videosorveglianza e Teleallarme",
     subtitle: "Sistemi Personalizzati con Centrale Operativa H24",
-    img: "images/videosorveglianza.jpg",
+    img: "images/Videosorv.png",
     html: '<p>La Dynamism S.r.l. progetta e installa sistemi di videosorveglianza e teleallarme su misura, integrati con la propria centrale operativa attiva 24 ore su 24, 365 giorni l\'anno. Ogni impianto viene studiato in base alle specifiche esigenze del cliente, garantendo copertura completa e risposta immediata in caso di allarme.</p><p>La nostra centrale operativa riceve in tempo reale i segnali di allarme e le immagini delle telecamere, attivando immediatamente le procedure di intervento previste: allerta alle forze dell\'ordine, contatto diretto con il cliente o invio di personale operativo sul posto.</p><div class="modal-divider"></div><ul><li>Progettazione personalizzata dell\'impianto per abitazioni, uffici e strutture commerciali</li><li>Telecamere IP ad alta risoluzione, visione notturna e analisi video intelligente</li><li>Sistemi di teleallarme con sensori volumetrici, perimetrali e antintrusione</li><li>Monitoraggio remoto H24 dalla centrale operativa proprietaria</li><li>Intervento immediato su allarme: forze dell\'ordine e squadra operativa</li><li>App mobile per il controllo e la visualizzazione in tempo reale</li><li>Integrazione con sistemi di controllo accessi e videosorveglianza esistenti</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   },
   {

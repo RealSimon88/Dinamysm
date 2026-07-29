@@ -157,7 +157,7 @@ var services = [
   },
   {
     title: "Due Diligence Aziendale",
-    subtitle: "Analisi e Verifica Preventiva — Nome da Definire",
+    subtitle: "Analisi e Verifica Preventiva per Operazioni Strategiche",
     img: "images/DueDiligence.png",
     html: '<p>Il servizio di Due Diligence Aziendale della Dynamism S.r.l. consente di raccogliere e verificare in modo approfondito informazioni su soggetti fisici o giuridici prima di operazioni societarie, acquisizioni, partnership o assunzioni in posizioni di responsabilità.</p><p>L\'attività si avvale di fonti aperte certificate, registri ufficiali nazionali e internazionali e, ove necessario, di attività investigativa sul campo, garantendo un quadro informativo completo e verificato.</p><div class="modal-divider"></div><ul><li>Verifica dell\'affidabilità di partner e fornitori</li><li>Analisi reputazionale di persone fisiche e giuridiche</li><li>Controllo su registri camerali, ipotecari e giudiziari</li><li>Supporto pre-M&A, joint venture e operazioni di investimento</li><li>Screening di candidati per ruoli di alta responsabilità</li><li>Report strutturato con profilo di rischio e raccomandazioni</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   }
@@ -169,11 +169,21 @@ function openModal(i) {
   var o = document.getElementById('modalOverlay');
   document.getElementById('modalImg').src = s.img;
   document.getElementById('modalImg').alt = s.title;
-  document.getElementById('modalBody').innerHTML =
-    '<h2>' + s.title + '</h2>' +
-    '<span class="modal-subtitle">' + s.subtitle + '</span>' +
-    '<div class="modal-divider"></div>' +
-    s.html;
+  var h2 = document.createElement('h2');
+  h2.textContent = s.title;
+  var sub = document.createElement('span');
+  sub.className = 'modal-subtitle';
+  sub.textContent = s.subtitle;
+  var divider = document.createElement('div');
+  divider.className = 'modal-divider';
+  var content = document.createElement('div');
+  content.innerHTML = s.html;
+  var body = document.getElementById('modalBody');
+  body.innerHTML = '';
+  body.appendChild(h2);
+  body.appendChild(sub);
+  body.appendChild(divider);
+  body.appendChild(content);
   o.classList.add('open');
   document.body.style.overflow = 'hidden';
 }

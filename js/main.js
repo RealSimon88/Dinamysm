@@ -47,17 +47,45 @@ function submitContactForm(e) {
     privacy.parentElement.classList.remove('privacy-error');
   }
   if (!valid) return;
-  form.style.display = 'none';
-  document.getElementById('contactSuccess').classList.add('visible');
-  setTimeout(function() {
-    closeContactModal();
-    setTimeout(function() {
-      form.style.display = '';
-      form.reset();
-      form.querySelectorAll('.field-invalid').forEach(function(f){ f.classList.remove('field-invalid'); });
-      document.getElementById('contactSuccess').classList.remove('visible');
-    }, 500);
-  }, 3000);
+
+  var btn = form.querySelector('.form-submit');
+  btn.disabled = true;
+  btn.textContent = 'Invio in corso…';
+
+  var data = new FormData(form);
+  data.append('_subject', 'Nuova richiesta dal sito – Dynamism S.r.l.');
+
+  fetch('https://formspree.io/f/mqerjzow', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function(res) {
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('contactSuccess').classList.add('visible');
+      setTimeout(function() {
+        closeContactModal();
+        setTimeout(function() {
+          form.style.display = '';
+          form.reset();
+          form.querySelectorAll('.field-invalid').forEach(function(f){ f.classList.remove('field-invalid'); });
+          document.getElementById('contactSuccess').classList.remove('visible');
+          btn.disabled = false;
+          btn.textContent = 'Invia Richiesta';
+        }, 500);
+      }, 3000);
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Invia Richiesta';
+      alert('Invio non riuscito. Riprova o contattaci telefonicamente al 06.4121.9858.');
+    }
+  })
+  .catch(function() {
+    btn.disabled = false;
+    btn.textContent = 'Invia Richiesta';
+    alert('Errore di connessione. Riprova o contattaci telefonicamente al 06.4121.9858.');
+  });
 }
 
 // Validazione live sui campi

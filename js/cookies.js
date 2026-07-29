@@ -9,10 +9,11 @@
   }
 
   function getCookie(name) {
-    return decodeURIComponent(document.cookie.split('; ').reduce(function(r, v) {
+    var raw = document.cookie.split('; ').reduce(function(r, v) {
       var parts = v.split('=');
       return parts[0] === name ? parts[1] : r;
-    }, ''));
+    }, '');
+    try { return decodeURIComponent(raw); } catch(e) { return ''; }
   }
 
   function hideBanner() {

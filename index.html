@@ -3,7 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dynamism Security</title>
+
+<!-- SEO PRIMARY -->
+<title>Dynamism S.r.l. | Sicurezza Privata, Investigazioni e Formazione – Roma</title>
+<meta name="description" content="Dynamism S.r.l. offre servizi di sicurezza aziendale e privata, investigazioni, bonifiche ambientali e formazione professionale a Roma. 30+ anni di esperienza, massima riservatezza.">
+<meta name="keywords" content="agenzia investigativa Roma, sicurezza privata Roma, bonifiche ambientali, investigazioni private, security management, Dynamism">
+<meta name="author" content="Dynamism S.r.l.">
+<link rel="canonical" href="https://dynamismsecurity.com/">
+
+<!-- SECURITY -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- OPEN GRAPH (social sharing) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dynamismsecurity.com/">
+<meta property="og:title" content="Dynamism S.r.l. | Sicurezza Privata e Investigazioni – Roma">
+<meta property="og:description" content="30+ anni di esperienza nella sicurezza aziendale e privata, investigazioni e formazione professionale per forze dell'ordine e aziende.">
+<meta property="og:image" content="https://dynamismsecurity.com/images/logo-circ.png">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Dynamism S.r.l.">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dynamism S.r.l. | Sicurezza Privata e Investigazioni – Roma">
+<meta name="twitter:description" content="30+ anni di esperienza nella sicurezza aziendale e privata, investigazioni e formazione professionale.">
+<meta name="twitter:image" content="https://dynamismsecurity.com/images/logo-circ.png">
+
+<!-- SCHEMA.ORG JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dynamism S.r.l.",
+  "url": "https://dynamismsecurity.com",
+  "logo": "https://dynamismsecurity.com/images/logo-circ.png",
+  "image": "https://dynamismsecurity.com/images/logo-circ.png",
+  "description": "Servizi professionali di sicurezza aziendale e privata, investigazioni, bonifiche ambientali e formazione a Roma.",
+  "vatID": "IT14844521006",
+  "telephone": "+390641219858",
+  "email": "info@dynamismsecurity.com",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Livia Orestilla 12/14",
+      "addressLocality": "Roma",
+      "postalCode": "00174",
+      "addressCountry": "IT",
+      "description": "Sede legale"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "Via E. Paternò di Sessa 40",
+      "addressLocality": "Roma",
+      "postalCode": "00156",
+      "addressCountry": "IT",
+      "description": "Sede operativa"
+    }
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Italy"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servizi di Sicurezza",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Prevenzione e Difesa"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bonifiche Ambientali"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Investigazioni Private"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Indagini Penali"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Portierato e Controllo"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Controllo Minori"}}
+    ]
+  },
+  "sameAs": ["https://dynamismsecurity.com"]
+}
+</script>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-circ.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-circ.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/logo-circ.png">
+
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,7 +102,10 @@
   <div class="contact-modal">
     <button class="modal-close" onclick="closeContactModal()">✕</button>
     <div class="contact-modal-header">
-      <div class="contact-modal-logo"><img src="images/logo-circ.png" alt="Dynamism"></div>
+      <div class="contact-modal-logo">
+      <img src="images/logo-circ.png" alt="Dynamism">
+      <div class="brand-tagline">Security Investigation</div>
+    </div>
       <h2>Richiedi una Consulenza</h2>
       <p>Compila il modulo, ti ricontatteremo in totale riservatezza.</p>
     </div>
@@ -28,20 +114,24 @@
         <div class="form-group">
           <label for="cf-nome">Nome *</label>
           <input type="text" id="cf-nome" name="nome" placeholder="Mario" required>
+          <span class="field-error">Campo obbligatorio</span>
         </div>
         <div class="form-group">
           <label for="cf-cognome">Cognome *</label>
           <input type="text" id="cf-cognome" name="cognome" placeholder="Rossi" required>
+          <span class="field-error">Campo obbligatorio</span>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label for="cf-email">Email *</label>
           <input type="email" id="cf-email" name="email" placeholder="mario.rossi@email.com" required>
+          <span class="field-error">Inserisci un indirizzo email valido</span>
         </div>
         <div class="form-group">
           <label for="cf-telefono">Telefono</label>
           <input type="tel" id="cf-telefono" name="telefono" placeholder="+39 06 0000000">
+          <span class="field-error">Formato non valido</span>
         </div>
       </div>
       <div class="form-group">
@@ -54,6 +144,9 @@
           <option value="penali">Indagini Penali</option>
           <option value="portierato">Portierato e Controllo</option>
           <option value="minori">Controllo Minori</option>
+          <option value="vigilanza">Vigilanza Non Armata</option>
+          <option value="videosorveglianza">Videosorveglianza e Teleallarme H24</option>
+          <option value="duediligence">Due Diligence Aziendale</option>
           <option value="altro">Altro</option>
         </select>
       </div>
@@ -63,8 +156,10 @@
       </div>
       <div class="form-privacy">
         <input type="checkbox" id="cf-privacy" name="privacy" required>
-        <label for="cf-privacy">Ho letto e accetto la <a href="privacy-policy.html" target="_blank">Privacy Policy</a>. I dati saranno trattati con la massima riservatezza.</label>
+        <label for="cf-privacy">Ho letto e accetto la <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>. I dati saranno trattati con la massima riservatezza.</label>
       </div>
+      <!-- Honeypot anti-spam: nascosto agli utenti, visibile ai bot -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <button type="submit" class="form-submit">Invia Richiesta</button>
     </form>
     <div class="contact-success" id="contactSuccess">
@@ -87,12 +182,17 @@
 <nav id="navbar">
   <div class="logo">
     <img src="images/logo-circ.png" alt="Dynamism">
-    DYNAMISM<span>.</span>
+    <div class="logo-text-block">
+      DYNAMISM<span>.</span>
+      <div class="brand-tagline">Security Investigation</div>
+    </div>
   </div>
   <div class="nav-links" id="navLinks">
-    <a href="#servizi">Servizi</a>
-    <a href="#formazione">Formazione</a>
+    <a href="#" class="nav-home" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="Torna in cima"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></a>
+    <a href="#servizi">Divisioni</a>
     <a href="#chi-siamo">Chi Siamo</a>
+    <!-- <a href="#formazione">Formazione</a> -->
+    <a href="#partner">Partner</a>
     <a href="#contatti">Contatti</a>
   </div>
   <button class="nav-cta desktop-only" onclick="openContactModal()">Richiedi Consulenza</button>
@@ -100,9 +200,10 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#servizi" onclick="toggleMenu()">Servizi</a>
-  <a href="#formazione" onclick="toggleMenu()">Formazione</a>
+  <a href="#servizi" onclick="toggleMenu()">Divisioni</a>
   <a href="#chi-siamo" onclick="toggleMenu()">Chi Siamo</a>
+  <!-- <a href="#formazione" onclick="toggleMenu()">Formazione</a> -->
+  <a href="#partner" onclick="toggleMenu()">Partner</a>
   <a href="#contatti" onclick="toggleMenu()">Contatti</a>
   <button class="nav-cta" onclick="toggleMenu();openContactModal()">Richiedi Consulenza</button>
 </div>
@@ -110,26 +211,50 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="particle" style="left:10%;bottom:0;animation-delay:0s;animation-duration:7s;"></div>
-  <div class="particle" style="left:25%;bottom:0;animation-delay:1.5s;animation-duration:5s;"></div>
-  <div class="particle" style="left:50%;bottom:0;animation-delay:0.8s;animation-duration:8s;"></div>
-  <div class="particle" style="left:70%;bottom:0;animation-delay:2.2s;animation-duration:6s;"></div>
-  <div class="particle" style="left:85%;bottom:0;animation-delay:3s;animation-duration:7.5s;"></div>
-  <div class="particle" style="left:40%;bottom:0;animation-delay:4s;animation-duration:5.5s;"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Security &bull; Investigations &bull; Training</div>
-    <h1>
-      <span class="line"><span class="line-inner white">Sicurezza.</span></span>
-      <span class="line"><span class="line-inner gold">Riservatezza.</span></span>
-      <span class="line"><span class="line-inner white">Risultati.</span></span>
-    </h1>
-    <p>Oltre 30 anni di esperienza nella sicurezza aziendale e privata, investigazioni e formazione professionale per forze dell'ordine e aziende.</p>
-    <div class="hero-buttons">
-      <button class="btn-primary" onclick="openContactModal()">Contattaci Ora</button>
-      <button class="btn-secondary">Scopri i Servizi</button>
+
+  <div class="hero-split">
+
+    <!-- SINISTRA: logo con radar -->
+    <div class="hero-logo-side">
+      <div class="hero-radar">
+        <div class="radar-ring radar-ring-1"></div>
+        <div class="radar-ring radar-ring-2"></div>
+        <div class="radar-ring radar-ring-3"></div>
+        <div class="radar-sweep"></div>
+        <div class="radar-dot radar-dot-1"></div>
+        <div class="radar-dot radar-dot-2"></div>
+        <div class="radar-dot radar-dot-3"></div>
+        <div class="hero-logo-wrap">
+          <img src="images/logo-circ.png" alt="Dynamism Security" class="hero-logo-img">
+        </div>
+      </div>
+      <div class="hero-brand-name">DYNAMISM<span>.</span></div>
+      <div class="hero-brand-sub">Security Investigation</div>
     </div>
+
+    <!-- DESTRA: testo -->
+    <div class="hero-text-side">
+      <div class="hero-badge">30+ anni di esperienza &bull; Roma</div>
+      <h1>
+        <span class="line"><span class="line-inner white">Riservatezza.</span></span>
+        <span class="line"><span class="line-inner gold">Professionalità.</span></span>
+        <span class="line"><span class="line-inner white">Risultati.</span></span>
+      </h1>
+      <p>Soluzioni professionali di sicurezza aziendale e privata, investigazioni e formazione per forze dell'ordine e imprese.</p>
+      <div class="hero-divider-line"></div>
+      <div class="hero-stats-mini">
+        <div class="hero-stat-mini"><strong>500+</strong><span>Incarichi Conclusi</span></div>
+        <div class="hero-stat-mini"><strong>9</strong><span>Divisioni</span></div>
+        <div class="hero-stat-mini"><strong>100%</strong><span>Riservatezza</span></div>
+      </div>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="openContactModal()">Richiedi Consulenza</button>
+        <button class="btn-secondary" onclick="document.getElementById('servizi').scrollIntoView({behavior:'smooth'})">Scopri le Divisioni</button>
+      </div>
+    </div>
+
   </div>
+
   <div class="scroll-indicator"><div class="scroll-line"></div><div class="scroll-text">Scorri</div></div>
 </section>
 
@@ -138,8 +263,8 @@
 <section class="stats">
   <div class="stats-grid">
     <div class="stat reveal scale"><div class="stat-num" data-target="30" data-suffix="+">0</div><div class="stat-label">Anni di Esperienza</div></div>
-    <div class="stat reveal scale reveal-delay-1"><div class="stat-num" data-target="500" data-suffix="+">0</div><div class="stat-label">Clienti Serviti</div></div>
-    <div class="stat reveal scale reveal-delay-2"><div class="stat-num" data-target="6" data-suffix="">0</div><div class="stat-label">Divisioni Operative</div></div>
+    <div class="stat reveal scale reveal-delay-1"><div class="stat-num" data-target="500" data-suffix="+">0</div><div class="stat-label">Incarichi Conclusi</div></div>
+    <div class="stat reveal scale reveal-delay-2"><div class="stat-num" data-target="9" data-suffix="">0</div><div class="stat-label">Divisioni Attive</div></div>
     <div class="stat reveal scale reveal-delay-3"><div class="stat-num" data-target="100" data-suffix="%">0</div><div class="stat-label">Riservatezza</div></div>
   </div>
 </section>
@@ -147,49 +272,64 @@
 <div class="section-divider"></div>
 
 <section class="services" id="servizi">
-  <div class="section-label reveal">I Nostri Servizi</div>
+  <div class="section-label reveal">Le Nostre Divisioni</div>
   <div class="section-title reveal reveal-delay-1">Soluzioni di sicurezza<br><span>complete e personalizzate</span></div>
   <div class="services-grid">
 
     <div class="service-card reveal reveal-delay-1" onclick="openModal(0)">
-      <div class="service-card-img"><img src="images/prevenzione-e-difesa.jpg" alt="Prevenzione e Difesa"></div>
+      <div class="service-card-img"><img src="images/prevenzione-e-difesa.jpg" alt="Prevenzione e Difesa" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Prevenzione e Difesa</h3><p>Analisi di vulnerabilità, protocolli di emergenza e innalzamento dei livelli di sicurezza aziendale.</p><div class="arrow">→</div></div>
     </div>
 
     <div class="service-card reveal reveal-delay-2" onclick="openModal(1)">
-      <div class="service-card-img"><img src="images/bonifiche-ambientali.jpg" alt="Bonifiche Ambientali"></div>
+      <div class="service-card-img"><img src="images/bonifiche-ambientali.jpg" alt="Bonifiche Ambientali" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Bonifiche Ambientali</h3><p>Ricerca di microspie, telecamere nascoste e dispositivi di localizzazione.</p><div class="arrow">→</div></div>
     </div>
 
     <div class="service-card reveal reveal-delay-3" onclick="openModal(2)">
-      <div class="service-card-img"><img src="images/investigazioni-private.jpg" alt="Investigazioni Private"></div>
+      <div class="service-card-img"><img src="images/investigazioni-private.jpg" alt="Investigazioni Private" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Investigazioni Private</h3><p>Servizi investigativi privati e aziendali a supporto di studi legali su tutto il territorio.</p><div class="arrow">→</div></div>
     </div>
 
     <div class="service-card reveal reveal-delay-4" onclick="openModal(3)">
-      <div class="service-card-img"><img src="images/indagini-penali.jpg" alt="Indagini Penali"></div>
+      <div class="service-card-img"><img src="images/indagini-penali.jpg" alt="Indagini Penali" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Indagini Penali</h3><p>Investigazioni penali su incarico della Procura o del cliente.</p><div class="arrow">→</div></div>
     </div>
 
     <div class="service-card reveal reveal-delay-5" onclick="openModal(4)">
-      <div class="service-card-img"><img src="images/portierato-e-controllo.jpg" alt="Portierato e Controllo"></div>
+      <div class="service-card-img"><img src="images/portierato-e-controllo.jpg" alt="Portierato e Controllo" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Portierato e Controllo</h3><p>Personale qualificato per controllo accessi, portierato e reception.</p><div class="arrow">→</div></div>
     </div>
 
     <div class="service-card reveal reveal-delay-6" onclick="openModal(5)">
-      <div class="service-card-img"><img src="images/controllo-minori.jpg" alt="Controllo Minori"></div>
+      <div class="service-card-img"><img src="images/controllo-minori.jpg" alt="Controllo Minori" loading="lazy" width="600" height="400"></div>
       <div class="service-card-body"><h3>Controllo Minori</h3><p>Garanzie sulle frequentazioni e abitudini dei propri figli. Massima riservatezza.</p><div class="arrow">→</div></div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1" onclick="openModal(6)">
+      <div class="service-card-img"><img src="images/VigilanzaNonArmata.png" alt="Vigilanza Non Armata" loading="lazy" width="600" height="400"></div>
+      <div class="service-card-body"><h3>Vigilanza Non Armata</h3><p>Presidio e sorveglianza professionale per aziende, strutture commerciali ed eventi. Personale certificato.</p><div class="arrow">→</div></div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2" onclick="openModal(7)">
+      <div class="service-card-img"><img src="images/Videosorv.png" alt="Videosorveglianza e Teleallarme H24" loading="lazy" width="600" height="400"></div>
+      <div class="service-card-body"><h3>Videosorveglianza e Teleallarme</h3><p>Sistemi su misura monitorati dalla nostra centrale operativa attiva 24 ore su 24, 365 giorni l'anno.</p><div class="arrow">→</div></div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-3" onclick="openModal(8)">
+      <div class="service-card-img"><img src="images/DueDiligence.png" alt="Due Diligence Aziendale" loading="lazy" width="600" height="400"></div>
+      <div class="service-card-body"><h3>Due Diligence Aziendale</h3><p>Verifica approfondita di persone, aziende e partner commerciali prima di operazioni societarie o partnership strategiche.</p><div class="arrow">→</div></div>
     </div>
 
   </div>
 </section>
 
-<section class="parallax-section" id="formazione">
+<section class="parallax-section">
   <div class="parallax-bg" id="parallaxBg"></div>
   <div class="parallax-overlay"></div>
   <div class="parallax-content reveal scale">
     <div class="big-quote">"</div>
-    <blockquote>La sicurezza non è un prodotto, ma un processo. La nostra missione è renderlo dinamico, efficace e invisibile.</blockquote>
+    <blockquote>Chi non progetta sicurezza programma fallimento.</blockquote>
     <cite>— Dynamism S.r.l.</cite>
   </div>
 </section>
@@ -197,7 +337,10 @@
 <section class="about" id="chi-siamo">
   <div class="about-inner">
     <div class="about-visual reveal from-left">
-      <div class="about-box"><img class="about-logo" src="images/logo-circ.png" alt="Dynamism Logo"></div>
+      <div class="about-box">
+        <img class="about-logo" src="images/logo-circ.png" alt="Dynamism Logo">
+        <div class="brand-tagline">Security Investigation</div>
+      </div>
     </div>
     <div class="about-text">
       <div class="section-label reveal">Chi Siamo</div>
@@ -214,6 +357,91 @@
   </div>
 </section>
 
+<!-- SEZIONE FORMAZIONE — commentata temporaneamente, da ripristinare quando pronta
+<div class="section-divider"></div>
+
+<section class="formazione-section" id="formazione">
+  <div class="section-label reveal">Formazione</div>
+  <div class="section-title reveal reveal-delay-1">Programmi formativi<br><span>professionali e specialistici</span></div>
+  <div class="formazione-grid">
+
+    <div class="formazione-card reveal reveal-delay-1">
+      <div class="formazione-card-icon">01</div>
+      <h3>Sicurezza Antirapina e Antiaggressione</h3>
+      <p>Tecniche operative di prevenzione e gestione di situazioni di rischio fisico. Rivolto a operatori di sicurezza, personale bancario e figure esposte.</p>
+      <span class="formazione-tag">In definizione</span>
+    </div>
+
+    <div class="formazione-card reveal reveal-delay-2">
+      <div class="formazione-card-icon">02</div>
+      <h3>Gestione delle Crisi e Continuità Operativa</h3>
+      <p>Protocolli di crisis management, pianificazione della continuità aziendale e gestione delle emergenze per responsabili della sicurezza e manager.</p>
+      <span class="formazione-tag">In definizione</span>
+    </div>
+
+    <div class="formazione-card reveal reveal-delay-3">
+      <div class="formazione-card-icon">03</div>
+      <h3>Normativa GDPR e Sicurezza delle Informazioni</h3>
+      <p>Formazione specialistica sulla protezione dei dati personali, sicurezza delle informazioni aziendali e conformità alla normativa vigente.</p>
+      <span class="formazione-tag">In definizione</span>
+    </div>
+
+    <div class="formazione-card reveal reveal-delay-4">
+      <div class="formazione-card-icon">04</div>
+      <h3>Tecniche Investigative di Base</h3>
+      <p>Corso introduttivo alle metodologie investigative: osservazione, documentazione, pedinamento e raccolta di prove con validità giuridica.</p>
+      <span class="formazione-tag">In definizione</span>
+    </div>
+
+  </div>
+  <div class="formazione-cta reveal reveal-delay-5">
+    <p>I programmi formativi sono in fase di definizione. Contattaci per ricevere informazioni sui corsi disponibili.</p>
+    <button class="btn-primary" onclick="openContactModal()">Richiedi Informazioni</button>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+END SEZIONE FORMAZIONE -->
+
+<section class="partners-section" id="partner">
+  <div class="section-label reveal">I Nostri Partner</div>
+  <div class="section-title reveal reveal-delay-1">Collaborazioni<br><span>certificate e consolidate</span></div>
+  <div class="partners-grid">
+
+    <a class="partner-card reveal reveal-delay-1" href="https://www.dautiliagroup.it/" target="_blank" rel="noopener noreferrer">
+      <div class="partner-logo-wrap">
+        <img src="images/Datulia.png" alt="Gruppo d'Autilia" class="partner-logo-img">
+      </div>
+      <div class="partner-info">
+        <div class="partner-name">Gruppo d'Autilia</div>
+        <div class="partner-link">dautiliagroup.it →</div>
+      </div>
+    </a>
+
+    <div class="partner-card reveal reveal-delay-2">
+      <div class="partner-logo-wrap">
+        <img src="images/Marotta.png" alt="Studio Marotta Mingoia" class="partner-logo-img">
+      </div>
+      <div class="partner-info">
+        <div class="partner-name">Studio Marotta Mingoia</div>
+        <a class="partner-tel" href="tel:+393288698564">+39 328 869 8564</a>
+        <a class="partner-tel" href="tel:+390632334917">06 3233491</a>
+      </div>
+    </div>
+
+    <a class="partner-card reveal reveal-delay-3" href="https://www.ulnlife.com/" target="_blank" rel="noopener noreferrer">
+      <div class="partner-logo-wrap">
+        <img src="images/uln.png" alt="ULN LIFE SPA" class="partner-logo-img">
+      </div>
+      <div class="partner-info">
+        <div class="partner-name">ULN LIFE SPA</div>
+        <div class="partner-link">ulnlife.com →</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
 <div class="section-divider"></div>
 
 <section class="cta" id="contatti">
@@ -227,8 +455,8 @@
 <footer class="reveal">
   <div class="footer-inner">
     <div class="footer-col"><h4>Dynamism S.r.l.</h4><p>Sede legale: Via Livia Orestilla 12/14 – 00174 Roma</p><p>Sede operativa: Via E. Paternò di Sessa, 40 – 00156 Roma</p></div>
-    <div class="footer-col"><h4>Contatti</h4><a href="tel:0641219858">06.4121.9858</a><a href="tel:0641205927">06.4120.5927</a><a href="mailto:info@dynamismsecurity.com">info@dynamismsecurity.com</a></div>
-    <div class="footer-col"><h4>Servizi</h4><a href="#">Prevenzione e Difesa</a><a href="#">Bonifiche Ambientali</a><a href="#">Investigazioni</a><a href="#">Formazione</a></div>
+    <div class="footer-col"><h4>Contatti</h4><a href="tel:0641219858">06.4121.9858</a><a href="mailto:info@dynamismsecurity.com">info@dynamismsecurity.com</a></div>
+      <div class="footer-col"><h4>Divisioni</h4><a href="#">Prevenzione e Difesa</a><a href="#">Bonifiche Ambientali</a><a href="#">Investigazioni</a><!-- <a href="#">Formazione</a> --></div>
     <div class="footer-col"><h4>Legal</h4><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-policy.html">Cookie Policy</a></div>
   </div>
   <div class="footer-bottom">© 2026 Dynamism S.r.l. – Tutti i diritti riservati – P.IVA 14844521006 – C.F. 14844521006</div>

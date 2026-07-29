@@ -10,19 +10,65 @@ function closeContactModal(e) {
   document.body.style.overflow = '';
 }
 
+function validateField(field) {
+  var val = field.value.trim();
+  var err = field.parentElement.querySelector('.field-error');
+  var ok = true;
+  if (field.required && !val) {
+    ok = false;
+  } else if (field.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+    ok = false;
+  } else if (field.type === 'tel' && val && !/^[\d\s\+\-\(\)]{6,20}$/.test(val)) {
+    ok = false;
+  }
+  if (!ok) {
+    field.classList.add('field-invalid');
+    if (err) err.style.display = 'block';
+  } else {
+    field.classList.remove('field-invalid');
+    if (err) err.style.display = 'none';
+  }
+  return ok;
+}
+
 function submitContactForm(e) {
   e.preventDefault();
-  document.getElementById('contactForm').style.display = 'none';
+  var form = document.getElementById('contactForm');
+  // Honeypot check: se il campo nascosto è compilato è un bot
+  if (form.querySelector('input[name="_honey"]').value) return;
+  var fields = form.querySelectorAll('input[required], input[type="email"], input[type="tel"], textarea[required]');
+  var valid = true;
+  fields.forEach(function(f) { if (!validateField(f)) valid = false; });
+  var privacy = document.getElementById('cf-privacy');
+  if (!privacy.checked) {
+    privacy.parentElement.classList.add('privacy-error');
+    valid = false;
+  } else {
+    privacy.parentElement.classList.remove('privacy-error');
+  }
+  if (!valid) return;
+  form.style.display = 'none';
   document.getElementById('contactSuccess').classList.add('visible');
   setTimeout(function() {
     closeContactModal();
     setTimeout(function() {
-      document.getElementById('contactForm').style.display = '';
-      document.getElementById('contactForm').reset();
+      form.style.display = '';
+      form.reset();
+      form.querySelectorAll('.field-invalid').forEach(function(f){ f.classList.remove('field-invalid'); });
       document.getElementById('contactSuccess').classList.remove('visible');
     }, 500);
   }, 3000);
 }
+
+// Validazione live sui campi
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  form.querySelectorAll('input, textarea').forEach(function(f) {
+    f.addEventListener('blur', function() { validateField(f); });
+    f.addEventListener('input', function() { if (f.classList.contains('field-invalid')) validateField(f); });
+  });
+});
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
@@ -37,37 +83,55 @@ var services = [
     title: "Prevenzione e Difesa",
     subtitle: "Crisis & Security Management",
     img: "images/prevenzione-e-difesa.jpg",
-    html: '<p>La Dynamism S.r.l. è in grado, grazie ai propri Dirigenti Qualificati, di analizzare, programmare e valutare l\'efficacia della sicurezza per la tua Azienda attraverso test di vulnerabilità mirati e approfonditi.</p><p>Il nostro approccio prevede un\'analisi completa delle infrastrutture fisiche e tecnologiche, individuando criticità e punti deboli prima che possano essere sfruttati.</p><div class="modal-divider"></div><ul><li>Analisi e valutazione dei rischi aziendali</li><li>Test di vulnerabilità per aziende e residenze private</li><li>Aggiornamento protocolli di emergenza secondo le ultime tecnologie</li><li>Innalzamento dei livelli di sicurezza attiva e passiva</li><li>Consulenza continuativa per il mantenimento degli standard</li></ul><button class="modal-cta" onclick="closeModal()">Richiedi Consulenza</button>'
+    html: '<p>La Dynamism S.r.l. è in grado, grazie ai propri Dirigenti Qualificati, di analizzare, programmare e valutare l\'efficacia della sicurezza per la tua Azienda attraverso test di vulnerabilità mirati e approfonditi.</p><p>Il nostro approccio prevede un\'analisi completa delle infrastrutture fisiche e tecnologiche, individuando criticità e punti deboli prima che possano essere sfruttati.</p><div class="modal-divider"></div><ul><li>Analisi e valutazione dei rischi aziendali</li><li>Test di vulnerabilità per aziende e residenze private</li><li>Aggiornamento protocolli di emergenza secondo le ultime tecnologie</li><li>Innalzamento dei livelli di sicurezza attiva e passiva</li><li>Consulenza continuativa per il mantenimento degli standard</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   },
   {
     title: "Bonifiche Ambientali",
     subtitle: "Ricerca Strumentazioni Elettroniche e Microspie",
     img: "images/bonifiche-ambientali.jpg",
-    html: '<p>Il servizio di bonifica ambientale è finalizzato alla salvaguardia del patrimonio economico, scientifico e tecnologico, sia personale che aziendale. Utilizziamo strumenti di ultima generazione per garantire risultati certi e affidabili.</p><p>Il nostro team è specializzato nel monitoraggio, valorizzazione e gestione di impianti tecnologici, sistemi di allarme, videosorveglianza, telecontrollo e ascolto.</p><div class="modal-divider"></div><ul><li>Ricerca di microfoni e dispositivi di ascolto nascosti</li><li>Individuazione di telecamere e sistemi di videosorveglianza occulti</li><li>Rilevazione di dispositivi di localizzazione GPS</li><li>Bonifica di uffici, sale riunioni, abitazioni e veicoli</li><li>Strumentazione di ultima generazione costantemente aggiornata</li></ul><button class="modal-cta" onclick="closeModal()">Richiedi Consulenza</button>'
+    html: '<p>Il servizio di bonifica ambientale è finalizzato alla salvaguardia del patrimonio economico, scientifico e tecnologico, sia personale che aziendale. Utilizziamo strumenti di ultima generazione per garantire risultati certi e affidabili.</p><p>Il nostro team è specializzato nel monitoraggio, valorizzazione e gestione di impianti tecnologici, sistemi di allarme, videosorveglianza, telecontrollo e ascolto.</p><div class="modal-divider"></div><ul><li>Ricerca di microfoni e dispositivi di ascolto nascosti</li><li>Individuazione di telecamere e sistemi di videosorveglianza occulti</li><li>Rilevazione di dispositivi di localizzazione GPS</li><li>Bonifica di uffici, sale riunioni, abitazioni e veicoli</li><li>Strumentazione di ultima generazione costantemente aggiornata</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   },
   {
     title: "Investigazioni Private",
     subtitle: "Servizi Investigativi Privati e Aziendali",
     img: "images/investigazioni-private.jpg",
-    html: '<p>Nel mondo dell\'investigazione privata e aziendale, la Dynamism S.r.l. concentra la propria attenzione nel supportare e mettersi al servizio di numerosi Studi Legali sul territorio nazionale, fornendo al cliente gli strumenti necessari per raggiungere i propri obiettivi.</p><p>L\'obiettivo finale è sempre dichiarato nel conferimento investigativo, garantendo trasparenza e professionalità in ogni fase del lavoro.</p><div class="modal-divider"></div><ul><li>Investigazioni patrimoniali e commerciali</li><li>Supporto a studi legali su tutto il territorio nazionale</li><li>Indagini su infedeltà coniugale e affidamento minori</li><li>Investigazioni aziendali su dipendenti infedeli</li><li>Raccolta prove documentali e testimoniali</li></ul><button class="modal-cta" onclick="closeModal()">Richiedi Consulenza</button>'
+    html: '<p>Nel mondo dell\'investigazione privata e aziendale, la Dynamism S.r.l. concentra la propria attenzione nel supportare e mettersi al servizio di numerosi Studi Legali sul territorio nazionale, fornendo al cliente gli strumenti necessari per raggiungere i propri obiettivi.</p><p>L\'obiettivo finale è sempre dichiarato nel conferimento investigativo, garantendo trasparenza e professionalità in ogni fase del lavoro.</p><div class="modal-divider"></div><ul><li>Investigazioni patrimoniali e commerciali</li><li>Supporto a studi legali su tutto il territorio nazionale</li><li>Indagini su infedeltà coniugale e affidamento minori</li><li>Investigazioni aziendali su dipendenti infedeli</li><li>Raccolta prove documentali e testimoniali</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   },
   {
     title: "Indagini Penali",
     subtitle: "Investigazioni di Carattere Penale",
     img: "images/indagini-penali.jpg",
-    html: '<p>Le indagini di investigazione penale sono servizi rivolti verso persone o aziende che hanno sporto denuncia presso le autorità competenti. La Dynamism S.r.l. può ricevere incarico direttamente dalla Procura di competenza o procedere parallelamente per conto del cliente.</p><p>Le prove investigative penali rappresentano un elemento fondamentale in fase giudiziaria e devono essere raccolte con la massima cura e professionalità per garantirne la validità processuale.</p><div class="modal-divider"></div><ul><li>Incarichi diretti dalla Procura di competenza</li><li>Indagini parallele per conto del cliente</li><li>Raccolta di prove con validità processuale</li><li>Collaborazione con le autorità nella massima disponibilità</li><li>Supporto completo in tutte le fasi del procedimento giudiziario</li></ul><button class="modal-cta" onclick="closeModal()">Richiedi Consulenza</button>'
+    html: '<p>Le indagini di investigazione penale sono servizi rivolti verso persone o aziende che hanno sporto denuncia presso le autorità competenti. La Dynamism S.r.l. può ricevere incarico direttamente dalla Procura di competenza o procedere parallelamente per conto del cliente.</p><p>Le prove investigative penali rappresentano un elemento fondamentale in fase giudiziaria e devono essere raccolte con la massima cura e professionalità per garantirne la validità processuale.</p><div class="modal-divider"></div><ul><li>Incarichi diretti dalla Procura di competenza</li><li>Indagini parallele per conto del cliente</li><li>Raccolta di prove con validità processuale</li><li>Collaborazione con le autorità nella massima disponibilità</li><li>Supporto completo in tutte le fasi del procedimento giudiziario</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   },
   {
     title: "Portierato e Controllo",
     subtitle: "Addetti al Controllo, Portierato e Reception",
     img: "images/portierato-e-controllo.jpg",
-    html: '<p>La Dynamism S.r.l. svolge servizi di controllo ed accoglienza in diverse localizzazioni sul territorio nazionale, mettendo a disposizione personale qualificato e abilitato alle normative che prevedono tale svolgimento.</p><p>Tutto il personale impiegato è in possesso delle certificazioni necessarie, tra cui abilitazione al primo soccorso e antincendio, garantendo un servizio sicuro e professionale.</p><div class="modal-divider"></div><ul><li>Controllo accessi e gestione visitatori</li><li>Servizio di reception e accoglienza qualificata</li><li>Portierato diurno e notturno</li><li>Personale abilitato Primo Soccorso e Antincendio</li><li>Copertura su tutto il territorio nazionale</li></ul><button class="modal-cta" onclick="closeModal()">Richiedi Consulenza</button>'
+    html: '<p>La Dynamism S.r.l. svolge servizi di controllo ed accoglienza in diverse localizzazioni sul territorio nazionale, mettendo a disposizione personale qualificato e abilitato alle normative che prevedono tale svolgimento.</p><p>Tutto il personale impiegato è in possesso delle certificazioni necessarie, tra cui abilitazione al primo soccorso e antincendio, garantendo un servizio sicuro e professionale.</p><div class="modal-divider"></div><ul><li>Controllo accessi e gestione visitatori</li><li>Servizio di reception e accoglienza qualificata</li><li>Portierato diurno e notturno</li><li>Personale abilitato Primo Soccorso e Antincendio</li><li>Copertura su tutto il territorio nazionale</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   },
   {
     title: "Controllo Minori",
     subtitle: "Servizio Dedicato alle Famiglie",
     img: "images/controllo-minori.jpg",
-    html: '<p>Il Controllo Minori è un servizio rivolto alle famiglie che vogliono avere maggiori garanzie sulle frequentazioni e abitudini dei propri figli. In un\'epoca in cui i pericoli possono essere ovunque, offriamo un supporto discreto e professionale.</p><p>Il servizio può avvalersi anche di strumentazioni elettroniche personalizzate alle finalità specifiche. La riservatezza è elemento fondamentale per lo svolgimento di tali servizi e valore aggiunto per la salvaguardia della famiglia.</p><div class="modal-divider"></div><ul><li>Monitoraggio discreto delle frequentazioni</li><li>Verifica delle abitudini e degli spostamenti</li><li>Strumentazioni elettroniche personalizzate</li><li>Riservatezza assoluta a tutela della famiglia</li><li>Report dettagliati e documentati</li></ul><button class="modal-cta" onclick="closeModal()">Richiedi Consulenza</button>'
+    html: '<p>Il Controllo Minori è un servizio rivolto alle famiglie che vogliono avere maggiori garanzie sulle frequentazioni e abitudini dei propri figli. In un\'epoca in cui i pericoli possono essere ovunque, offriamo un supporto discreto e professionale.</p><p>Il servizio può avvalersi anche di strumentazioni elettroniche personalizzate alle finalità specifiche. La riservatezza è elemento fondamentale per lo svolgimento di tali servizi e valore aggiunto per la salvaguardia della famiglia.</p><div class="modal-divider"></div><ul><li>Monitoraggio discreto delle frequentazioni</li><li>Verifica delle abitudini e degli spostamenti</li><li>Strumentazioni elettroniche personalizzate</li><li>Riservatezza assoluta a tutela della famiglia</li><li>Report dettagliati e documentati</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
+  },
+  {
+    title: "Vigilanza Non Armata",
+    subtitle: "Sorveglianza Professionale e Controllo del Territorio",
+    img: "images/VigilanzaNonArmata.png",
+    html: '<p>La Dynamism S.r.l. fornisce servizi di vigilanza non armata con personale qualificato e certificato secondo la normativa vigente. Il servizio garantisce una presenza professionale e deterrente presso qualsiasi tipologia di struttura.</p><p>Ogni operatore è formato per gestire situazioni di criticità con equilibrio, competenza e nel pieno rispetto delle procedure operative.</p><div class="modal-divider"></div><ul><li>Presidio e sorveglianza di uffici, strutture commerciali e cantieri</li><li>Controllo degli accessi e identificazione dei visitatori</li><li>Ronde interne ed esterne programmate</li><li>Gestione delle situazioni di criticità e allerta</li><li>Personale abilitato Primo Soccorso e Antincendio</li><li>Copertura diurna, notturna e festiva</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
+  },
+  {
+    title: "Videosorveglianza e Teleallarme",
+    subtitle: "Sistemi Personalizzati con Centrale Operativa H24",
+    img: "images/Videosorv.png",
+    html: '<p>La Dynamism S.r.l. progetta e installa sistemi di videosorveglianza e teleallarme su misura, integrati con la propria centrale operativa attiva 24 ore su 24, 365 giorni l\'anno. Ogni impianto viene studiato in base alle specifiche esigenze del cliente, garantendo copertura completa e risposta immediata in caso di allarme.</p><p>La nostra centrale operativa riceve in tempo reale i segnali di allarme e le immagini delle telecamere, attivando immediatamente le procedure di intervento previste: allerta alle forze dell\'ordine, contatto diretto con il cliente o invio di personale operativo sul posto.</p><div class="modal-divider"></div><ul><li>Progettazione personalizzata dell\'impianto per abitazioni, uffici e strutture commerciali</li><li>Telecamere IP ad alta risoluzione, visione notturna e analisi video intelligente</li><li>Sistemi di teleallarme con sensori volumetrici, perimetrali e antintrusione</li><li>Monitoraggio remoto H24 dalla centrale operativa proprietaria</li><li>Intervento immediato su allarme: forze dell\'ordine e squadra operativa</li><li>App mobile per il controllo e la visualizzazione in tempo reale</li><li>Integrazione con sistemi di controllo accessi e videosorveglianza esistenti</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
+  },
+  {
+    title: "Due Diligence Aziendale",
+    subtitle: "Analisi e Verifica Preventiva — Nome da Definire",
+    img: "images/DueDiligence.png",
+    html: '<p>Il servizio di Due Diligence Aziendale della Dynamism S.r.l. consente di raccogliere e verificare in modo approfondito informazioni su soggetti fisici o giuridici prima di operazioni societarie, acquisizioni, partnership o assunzioni in posizioni di responsabilità.</p><p>L\'attività si avvale di fonti aperte certificate, registri ufficiali nazionali e internazionali e, ove necessario, di attività investigativa sul campo, garantendo un quadro informativo completo e verificato.</p><div class="modal-divider"></div><ul><li>Verifica dell\'affidabilità di partner e fornitori</li><li>Analisi reputazionale di persone fisiche e giuridiche</li><li>Controllo su registri camerali, ipotecari e giudiziari</li><li>Supporto pre-M&A, joint venture e operazioni di investimento</li><li>Screening di candidati per ruoli di alta responsabilità</li><li>Report strutturato con profilo di rischio e raccomandazioni</li></ul><button class="modal-cta" onclick="closeModal();openContactModal()">Richiedi Consulenza</button>'
   }
 ];
 

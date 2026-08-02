@@ -42,6 +42,7 @@ async function handleSubmit(request, env) {
   }
 
   formData.delete('cf-turnstile-response');
+  formData.delete('_honey');
 
   const upstream = await fetch('https://formspree.io/f/mqerjzow', {
     method: 'POST',

@@ -45,7 +45,11 @@ async function handleSubmit(request, env) {
 
   const upstream = await fetch('https://formspree.io/f/mqerjzow', {
     method: 'POST',
-    headers: { 'Accept': 'application/json' },
+    headers: {
+      'Accept': 'application/json',
+      'Origin': 'https://dynamismsecurity.com',
+      'Referer': 'https://dynamismsecurity.com/'
+    },
     body: formData
   });
 

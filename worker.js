@@ -1,6 +1,16 @@
-export async function onRequestPost(context) {
-  const { request, env } = context;
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
 
+    if (url.pathname === '/submit' && request.method === 'POST') {
+      return handleSubmit(request, env);
+    }
+
+    return env.ASSETS.fetch(request);
+  }
+};
+
+async function handleSubmit(request, env) {
   let formData;
   try {
     formData = await request.formData();
@@ -31,7 +41,6 @@ export async function onRequestPost(context) {
     return json({ error: 'Verifica di sicurezza non superata. Riprova.' }, 400);
   }
 
-  // Rimuovi token prima di girare a Formspree
   formData.delete('cf-turnstile-response');
 
   const upstream = await fetch('https://formspree.io/f/mqerjzow', {

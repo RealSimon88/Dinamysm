@@ -49,7 +49,8 @@ async function handleSubmit(request, env) {
     headers: {
       'Accept': 'application/json',
       'Origin': 'https://dynamismsecurity.com',
-      'Referer': 'https://dynamismsecurity.com/'
+      'Referer': 'https://dynamismsecurity.com/',
+      'User-Agent': request.headers.get('User-Agent') || 'Mozilla/5.0'
     },
     body: formData
   });

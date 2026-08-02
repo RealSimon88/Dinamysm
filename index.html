@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://dynamismsecurity.com/">
 
 <!-- SECURITY -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://dynamismsecurity.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://dynamismsecurity.com https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; form-action 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
@@ -89,6 +89,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="images/logo-circ.png">
 
 <link rel="stylesheet" href="css/style.css">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -110,7 +111,7 @@
       <h2>Richiedi una Consulenza</h2>
       <p>Compila il modulo, ti ricontatteremo in totale riservatezza.</p>
     </div>
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mqerjzow" method="POST" onsubmit="submitContactForm(event)">
+    <form class="contact-form" id="contactForm" action="/submit" method="POST" onsubmit="submitContactForm(event)">
       <div class="form-row">
         <div class="form-group">
           <label for="cf-nome">Nome *</label>
@@ -160,6 +161,7 @@
         <label for="cf-privacy">Ho letto e accetto la <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>. I dati saranno trattati con la massima riservatezza.</label>
       </div>
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAEEeVsA2_fLBtYCg" data-theme="light"></div>
       <button type="submit" class="form-submit">Invia Richiesta</button>
     </form>
     <div class="contact-success" id="contactSuccess">

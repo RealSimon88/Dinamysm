@@ -48,6 +48,13 @@ function submitContactForm(e) {
   }
   if (!valid) return;
 
+  // Verifica che Turnstile abbia completato la challenge
+  var turnstileToken = form.querySelector('[name="cf-turnstile-response"]');
+  if (!turnstileToken || !turnstileToken.value) {
+    alert('Verifica di sicurezza in corso. Attendi un momento e riprova.');
+    return;
+  }
+
   var btn = form.querySelector('.form-submit');
   btn.disabled = true;
   btn.textContent = 'Invio in corso…';
@@ -55,10 +62,9 @@ function submitContactForm(e) {
   var data = new FormData(form);
   data.append('_subject', 'Nuova richiesta dal sito – Dynamism S.r.l.');
 
-  fetch('https://formspree.io/f/mqerjzow', {
+  fetch('/submit', {
     method: 'POST',
-    body: data,
-    headers: { 'Accept': 'application/json' }
+    body: data
   })
   .then(function(res) {
     if (res.ok) {
